@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:map_view/map_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
@@ -30,9 +29,6 @@ final ThemeData kDefaultTheme = new ThemeData(
 
 
 void main() {
-  defaultTargetPlatform == TargetPlatform.iOS
-      ? MapView.setApiKey("AIzaSyCLw1SjRi8TLDu_Nzcdo2Ufu68H1UXl9BU")
-      : MapView.setApiKey("AIzaSyDOG4RZZbkSn6Fk_OLQgayebjODUoBpLiE");
 
   runApp(new MaterialApp(
     title: "Trovami",
