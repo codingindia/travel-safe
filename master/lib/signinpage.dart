@@ -287,7 +287,7 @@ class signinformstate extends State<SignInForm>
                   children: <Widget>[
                     new Container(
                       child: new Text(
-                        'Trovami',
+                        'Travel Safe',
                         textAlign: TextAlign.center,
                         style: new TextStyle(fontSize: 50.0),
                       ),
