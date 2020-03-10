@@ -35,7 +35,7 @@ You’ll now have a local copy of your version of the original FOSSASIA reposito
 `$ git remote add upstream https://github.com/codingindia/travel-safe`
 
 #### To check this remote add set up:
-
+cd -
 `$ git remote -v`
 
 #### Make changes to files.

@@ -20,12 +20,12 @@ class RoundedButton extends StatelessWidget {
   //passing props in react style
   RoundedButton(
       {this.buttonName,
-        this.onTap,
-        this.height,
-        this.bottomMargin,
-        this.borderWidth,
-        this.width,
-        this.buttonColor,
+      this.onTap,
+      this.height,
+      this.bottomMargin,
+      this.borderWidth,
+      this.width,
+      this.buttonColor,
       this.splashcolor,
       this.highlightColor});
 
@@ -48,7 +48,7 @@ class RoundedButton extends StatelessWidget {
           child: new Text(buttonName, style: textStyle),
         ),
         splashColor: splashcolor,
-          highlightColor:highlightColor,
+        highlightColor: highlightColor,
       ));
     else
       return (new InkWell(
