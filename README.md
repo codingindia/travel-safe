@@ -1,6 +1,6 @@
 
 ## How to Contribute
-This is an Open Source project and we would be happy to see contributors who report bugs and file feature requests by submitting pull requests as well.This project adheres to the [Contributor Covenant](https://github.com/codingindia/travel-safe/blob/master/CONTRIBUTING.md). By participating, you are expected to uphold this code style. Please report issues here https://github.com/codingindia/travel-safe 
+This is an Open Source project and we would be happy to see contributors who report bugs and file feature requests by submitting pull requests as well.This project adheres to the [Contributor Covenant](https://github.com/codingindia/travel-safe/blob/master/CONTRIBUTING.md). By participating, you are expected to uphold this code style. Please report issues here https://github.com/codingindia/travel-safe. While opening a new pull request or a new issue please adhere to [the pull request template](), [bug report template]() and [feature request template]().
 
 ### Branch Policy
 We have the following branches
