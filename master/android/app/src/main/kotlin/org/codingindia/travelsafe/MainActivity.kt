@@ -1,4 +1,4 @@
-package com.example.trovami
+package org.codingindia.travelsafe
 
 import android.os.Bundle
 
