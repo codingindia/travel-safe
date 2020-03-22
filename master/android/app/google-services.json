@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:641557136145:android:a4f00502bbc552b572c2b0",
+        "mobilesdk_app_id": "1:641557136145:android:724c8cc15c4b53e372c2b0",
         "android_client_info": {
-          "package_name": "com.codingindia.travelsafe"
+          "package_name": "org.codingindia.travelsafe"
         }
       },
       "oauth_client": [
