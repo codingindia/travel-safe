@@ -56,7 +56,7 @@ Note that your friend’s repository will be on the left and your repository wil
 Click the green button “Create pull request”. Give a succinct and informative title, in the comment field give a short explanation of the changes and click the green button “Create pull request” again.
 
 #### Pulling others’ changes
-Before you make further changes to the repository, you should check that your version is up to date relative to FOSSASIA’s version.
+Before you make further changes to the repository, you should check that your version is up to date relative to CODING INDIA’s version.
 
 Go into the directory for the project and type:
 

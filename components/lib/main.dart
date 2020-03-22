@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'package:travel_safe/screens/maps.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 //class MyApp extends StatelessWidget {
 //  // This widget is the root of your application.
@@ -129,3 +132,5 @@ class MyApp extends StatelessWidget {
 //    );
 //  }
 //}
+
+
