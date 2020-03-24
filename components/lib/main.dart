@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_safe/screens/maps.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:share/share.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,6 +48,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final Geolocator geolocator = Geolocator()
+    ..forceAndroidLocationManager;
+  Position _currentPosition;
 
   void _incrementCounter() {
     setState(() {
@@ -97,18 +102,65 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display1,
+            ),
+            FlatButton(
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              color: Colors.blue,
+              textColor: Colors.white,
+              child: Text("Share Location"),
+              onPressed: () {
+                //get the current location when flat button is pressed
+                _getCurrentLocation();
+                //share latitude and longitude in map to other applications on the device
+                _shareMap();
+              },
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>AnimateCamera(13.0, 77.0)));
+          Navigator.push(context, MaterialPageRoute(
+              builder: (BuildContext context) => AnimateCamera(13.0, 77.0)));
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+
+  _getCurrentLocation() {
+    geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    }).catchError((e) {
+      print(e);
+    });
+  }
+
+  _shareText() {
+    final RenderBox box = context.findRenderObject();
+    Share.share(
+        'Latitide: ${_currentPosition.latitude} & Longitude: ${_currentPosition.longitude}',
+        sharePositionOrigin:
+        box.localToGlobal(Offset.zero) &
+        box.size);
+  }
+
+  _shareMap() {
+    final RenderBox box = context.findRenderObject();
+    Share.share(
+        'https://www.google.com/maps/search/?api=1&query=${_currentPosition.latitude},${_currentPosition.longitude}',
+        sharePositionOrigin:
+        box.localToGlobal(Offset.zero) &
+        box.size);
   }
 }
