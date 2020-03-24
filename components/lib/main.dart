@@ -107,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   .textTheme
                   .display1,
             ),
+
             FlatButton(
               padding: EdgeInsets.all(8.0),
               splashColor: Colors.blueAccent,
@@ -134,6 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  // This method/function gets the current user location
   _getCurrentLocation() {
     geolocator
         .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
@@ -146,15 +148,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  _shareText() {
-    final RenderBox box = context.findRenderObject();
-    Share.share(
-        'Latitide: ${_currentPosition.latitude} & Longitude: ${_currentPosition.longitude}',
-        sharePositionOrigin:
-        box.localToGlobal(Offset.zero) &
-        box.size);
-  }
-
+  // This method/function share the current user location in map view given all application on the
+  // the device that allows sharing
   _shareMap() {
     final RenderBox box = context.findRenderObject();
     Share.share(
