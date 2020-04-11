@@ -1,4 +1,4 @@
-package org.codingindia.travel_safe
+package org.codingindia.travelsafe
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
