@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "641557136145",
+    "firebase_url": "https://travel-safe-42ba8.firebaseio.com",
+    "project_id": "travel-safe-42ba8",
+    "storage_bucket": "travel-safe-42ba8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641557136145:android:029e03b08e2cb32772c2b0",
+        "android_client_info": {
+          "package_name": "org.codingindia.travelsafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641557136145-31pehn13rajk2mu1o65icntc8ovf07ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbafPkq2n56C-MfpLAbev3VQ1LiUk9EtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641557136145-31pehn13rajk2mu1o65icntc8ovf07ip.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

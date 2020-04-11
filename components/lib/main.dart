@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:travel_safe/panicButton.dart';
-import 'package:travel_safe/screens/maps.dart';
+import 'package:travelsafe/panicButton.dart';
+import 'package:travelsafe/screens/maps.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
 
