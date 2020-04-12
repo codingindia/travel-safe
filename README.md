@@ -26,3 +26,5 @@ We have the following branches
 
  * **master**
    This contains the stable code. After significant features/bugfixes are accumulated on development, we move it to master.
+   
+ * [**Code Of Conduct**](https://github.com/Aman-Codes/travel-safe/blob/development/CODE_OF_CONDUCT.md)
