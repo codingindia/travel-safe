@@ -5,36 +5,4 @@
     "project_id": "travel-safe-2b829",
     "storage_bucket": "travel-safe-2b829.appspot.com"
   },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:442117282613:android:f7bc520ac60b3569c28a7c",
-        "android_client_info": {
-          "package_name": "org.codingindia.travel_safe"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "442117282613-99jhc38as19kdk6jajorfqaekm4o42jq.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAcaiTY3eY9tONG_evpWTYSyTw_lg0t0dI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "442117282613-99jhc38as19kdk6jajorfqaekm4o42jq.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    }
-  ],
-  "configuration_version": "1"
-}
+  
