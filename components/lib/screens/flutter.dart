@@ -18,15 +18,3 @@ Future<FirebaseUser> _handleSignIn() async {
   return user;
 
 }
-/*
-_handleSignIn()
-    .then((FirebaseUser user) => print(user))
-    .catchError((e) => print(e));
-
-  final FirebaseUser users = (await _auth.createUserWithEmailAndPassword(
-      email: 'an email',
-      password: 'a password',
-    ))
-        .user;
-        
-*/
