@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text("Register"),
                 color: Colors.blue,
                 textColor: Colors.white,
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(8.0),
                 onPressed: (){
                   Navigator.push(
                     context,

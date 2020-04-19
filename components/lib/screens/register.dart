@@ -30,44 +30,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 labelText: 'Full Name',
               ),
             inputFormatters: [new LengthLimitingTextInputFormatter(30)],
-            
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.calendar_today,color: Colors.blue,),
-                hintText: 'Enter your date of birth',
-                labelText: 'Date of birth',
-
-              ),
-              keyboardType: TextInputType.datetime,
-              
-            ),
-            Padding(padding: EdgeInsets.all(10),
-              child: Text(
-                "Gender",
-                style: TextStyle(
-                  color: Colors.grey[700],
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            GenderSelection(
-                selectedGenderIconColor: Colors.blue,
-                maleText: "", //default Male
-                femaleText: "", //default Female
-                selectedGenderIconBackgroundColor: Colors.blue, // default red 
-                checkIconAlignment: Alignment.centerRight,   // default bottomRight
-                selectedGenderCheckIcon: null, // default Icons.check
-                onChanged: (Gender gender){
-                    print(gender);
+            validator: (value) {
+                  if (value.isEmpty) {
+                    return 'This field is compulsory.';
+                  }
+                  return null;
                 },
-                equallyAligned: true,
-                animationDuration: Duration(milliseconds: 400),
-                isCircular: true, // default : true,
-                isSelectedGenderIconCircular: true,
-                opacityOfGradient: 0.6,
-                padding: const EdgeInsets.all(3),
-                size: 80, //default : 120
+            
             ),
             TextFormField(
               decoration: const InputDecoration(
@@ -77,69 +46,58 @@ class _RegisterPageState extends State<RegisterPage> {
 
               ),
               keyboardType: TextInputType.phone,
-              inputFormatters: [
-                  new WhitelistingTextInputFormatter(
-                  new RegExp(r'^[()\d -]{1,15}$')),
-              ],
+                validator: (value) {
+                if (value.isEmpty) {
+                  return 'This field is compulsory.';
+                }
+                return null;
+              },
             ),
             TextFormField(
+              obscureText: true,
               decoration: const InputDecoration(
-                icon: const Icon(Icons.email,color: Colors.blue,),
-                hintText: "Enter email address",
-                labelText: "Email",
+                hintText: 'Enter chosen password',
+                labelText: 'Password',
               ),
-              keyboardType: TextInputType.emailAddress,
+            inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+              validator: (value) {
+                if (value.isEmpty) {
+                  return 'This field is compulsory.';
+                }
+                return null;
+              },
             ),
             TextFormField(
+              obscureText: true,
               decoration: const InputDecoration(
-                hintText: 'Enter your contact address',
-                labelText: 'Address Line 1',
+                hintText: 'Re enter chosen password',
+                labelText: 'Re enter Password',
               ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                hintText: 'Enter your contact address',
-                labelText: 'Address Line 2',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                hintText: 'Enter city',
-                labelText: 'City',
-              ),
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.phone,color: Colors.blue,),
-                hintText: 'Enter emergency contact number',
-                labelText: 'Emergency number 1',
-
-              ),
-              keyboardType: TextInputType.phone,
-              inputFormatters: [
-                WhitelistingTextInputFormatter.digitsOnly,
-              ],
-            ),
-            TextFormField(
-              decoration: const InputDecoration(
-                icon: const Icon(Icons.phone,color: Colors.blue,),
-                hintText: 'Enter emergency contact number',
-                labelText: 'Emergency number 2',
-              ),
-              keyboardType: TextInputType.phone,
-              inputFormatters: [
-                WhitelistingTextInputFormatter.digitsOnly,
-              ],
-            ),
+            inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+            validator: (value) {
+                  if (value.isEmpty) {
+                    return 'This field is compulsory.';
+                  }
+                  return null;
+                },
+            ), 
             SizedBox(height: 30,),
-            RaisedButton(
+            Builder(
+              builder: (context) => RaisedButton(
               elevation: 10,
               child: Text("Register",style: TextStyle(fontSize: 20),),
               padding: const EdgeInsets.all(14),
               color: Colors.blue,
               textColor: Colors.white,
-              onPressed: (){}
-            ),
+              onPressed: () {
+                if(_formKey.currentState.validate()){
+                    Scaffold.of(context).showSnackBar(SnackBar(
+                      content: Text("Form Submitted!"),
+                    ),
+                    );
+                }
+              }
+            ),),
             SizedBox(height: 60,),
           ],
         ),
