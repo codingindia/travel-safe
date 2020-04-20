@@ -5,6 +5,7 @@ import 'package:travelsafe/panicButton.dart';
 import 'package:travelsafe/screens/maps.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
+import 'package:travelsafe/screens/register.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {
@@ -12,6 +13,7 @@ void main() {
     home: new MyApp(),
   ));
 }
+
 
 
 class MyApp extends StatefulWidget {
@@ -92,6 +94,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 //share latitude and longitude in map to other applications on the device
                 _shareMap();
               },
+            ),
+            RaisedButton(
+                child: Text("Register"),
+                color: Colors.blue,
+                textColor: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=>RegisterPage()
+                    )
+                  );
+                }
             ),
           ],
         ),
