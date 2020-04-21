@@ -25,7 +25,6 @@ dependencies:
   geolocator: ^5.3.0
   share: ^0.6.3+6
   cloud_firestore: ^0.13.4+2
-  splashscreen: ^1.2.0
   intro_slider: ^1.0.8
 
   # The following adds the Cupertino Icons font to your application.
