@@ -127,8 +127,8 @@ class _MyIntroPage extends State<MyIntroPage> {
       highlightColorDoneBtn: Color(0xff000000),
 
       // Dot indicator
-      colorDot: Color(0x33D02090),
-      colorActiveDot: Color(0xffD02090),
+      colorDot: Color(0xffFFFDDD),
+      colorActiveDot: Color(0xffD08111),
       sizeDot: 13.0,
     );
   }
