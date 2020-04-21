@@ -18,26 +18,26 @@ class _MyIntroPage extends State<MyIntroPage> {
       new Slide(
         title: "WOMEN SAFETY",
         styleTitle:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoMono'),
         description: "Travel-safe simplifies safety for women in the digital world by"
             "making it easy to stay connected to the nearest police station.",
         styleDescription:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
         pathImage: "images/women_safe.png",
-        backgroundColor: Color(0xFFFFDEAD),
+        backgroundColor: Color(0xffD02090),
       ),
     );
     slides.add(
       new Slide(
         title: "TECHNOLOGY",
         styleTitle:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoMono'),
@@ -45,19 +45,19 @@ class _MyIntroPage extends State<MyIntroPage> {
             "use of the technology that entertains you and lies comfortably in your purse - your"
             "mobile phone, for your safety.",
         styleDescription:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
         pathImage: "images/security.jpeg",
-        backgroundColor: Color(0xffFFFACD),
+        backgroundColor: Color(0xff009981),
       ),
     );
     slides.add(
       new Slide(
         title: "REAL TIME TRACKING",
         styleTitle:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
             fontFamily: 'RobotoMono'),
@@ -66,32 +66,12 @@ class _MyIntroPage extends State<MyIntroPage> {
             "whenever switched on. When the user decides to share her location, the nearest "
             "police station also gets a regular update on  it.",
         styleDescription:
-        TextStyle(color: Color(0xffD02090),
+        TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
         pathImage: "images/safety.png",
-        backgroundColor: Color(0xffFFF8DC),
-      ),
-    );
-    slides.add(
-      new Slide(
-        title: "CRIME AREAS",
-        styleTitle:
-        TextStyle(color: Color(0xffD02090),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoMono'),
-        description:
-        "Based on the historical data, a heatmap will be created for the crime "
-            "prone areas so that the user is alerted about it.",
-        styleDescription:
-        TextStyle(color: Color(0xffD02090),
-            fontSize: 20.0,
-            fontStyle: FontStyle.italic,
-            fontFamily: 'Raleway'),
-        pathImage: "images/crime_areas.png",
-        backgroundColor: Color(0xffFFF8DC),
+        backgroundColor: Color(0xff101EBC),
       ),
     );
   }
@@ -109,25 +89,22 @@ class _MyIntroPage extends State<MyIntroPage> {
   }
 
   Widget renderNextBtn() {
-    return Icon(
-      Icons.navigate_next,
-      color: Color(0xffD02090),
-      size: 35.0,
-    );
+
   }
 
   Widget renderDoneBtn() {
-    return Icon(
-      Icons.done,
-      color: Color(0xffD02090),
-    );
+//    return Text(
+//      text: "GOT IT",
+//      color: Color(0xffD02090),
+//    );
+//    return Icon(
+//      Icons.done,
+//      color: Color(0xffD02090),
+//    );
   }
 
   Widget renderSkipBtn() {
-    return Icon(
-      Icons.skip_next,
-      color: Color(0xffD02090),
-    );
+
   }
 
   @override
