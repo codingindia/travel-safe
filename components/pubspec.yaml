@@ -45,10 +45,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
+    - images/tracking.png
+    - images/phone.png
     - images/safety.png
-    - images/security.jpeg
-    - images/women_safe.png
-    - images/crime_areas.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

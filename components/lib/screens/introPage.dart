@@ -29,7 +29,8 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
-        pathImage: "images/women_safe.png",
+        pathImage: "images/safety.png",
+//        pathImage: "images/women_safe.png",
         backgroundColor: Color(0xffD02090),
       ),
     );
@@ -49,7 +50,8 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
-        pathImage: "images/security.jpeg",
+        pathImage: "images/phone.png",
+//        pathImage: "images/security.jpeg",
         backgroundColor: Color(0xff009981),
       ),
     );
@@ -70,7 +72,7 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontStyle: FontStyle.italic,
             fontFamily: 'Raleway'),
-        pathImage: "images/safety.png",
+        pathImage: "images/tracking.png",
         backgroundColor: Color(0xff101EBC),
       ),
     );
