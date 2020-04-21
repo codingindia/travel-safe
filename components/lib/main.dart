@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:travelsafe/panicButton.dart';
 import 'package:travelsafe/screens/maps.dart';
@@ -7,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
 import 'package:travelsafe/screens/register.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:travelsafe/screens/login.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -105,6 +104,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context)=>RegisterPage()
+                    )
+                  );
+                }
+            ),
+            RaisedButton(
+                child: Text("Login"),
+                color: Colors.blue,
+                textColor: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=>LoginPage()
                     )
                   );
                 }
