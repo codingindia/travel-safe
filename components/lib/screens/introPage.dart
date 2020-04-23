@@ -21,12 +21,14 @@ class _MyIntroPage extends State<MyIntroPage> {
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'SansSerif'),
+            fontFamily: 'OpenSans'),
+        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
         description: "Travel-safe simplifies safety for women in the digital world.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontFamily: 'Roboto'),
+            fontFamily: 'RobotoMono'),
+        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
         pathImage: "images/safety.png",
 
         colorBegin: Color(0xffFF00FF),
@@ -43,12 +45,14 @@ class _MyIntroPage extends State<MyIntroPage> {
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'San'),
+            fontFamily: 'OpenSans'),
+        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
         description: "When travelling alone, stay alert and make use of technology.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontFamily: 'Roboto'),
+            fontFamily: 'RobotoMono'),
+        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
         pathImage: "images/phone.png",
 
         colorBegin: Color(0xff48D1CC),
@@ -59,18 +63,20 @@ class _MyIntroPage extends State<MyIntroPage> {
     );
     slides.add(
       new Slide(
-        title: "REAL TIME TRACKING",
+        title: "TRACKING",
         styleTitle:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'San'),
+            fontFamily: 'OpenSans'),
+        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
         description:
         "User can create her own private group to share live location tracking.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontFamily: 'Roboto'),
+            fontFamily: 'RobotoMono'),
+        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
         pathImage: "images/tracking.png",
 
         colorBegin: Color(0xff4169E1),
@@ -98,14 +104,7 @@ class _MyIntroPage extends State<MyIntroPage> {
   }
 
   Widget renderDoneBtn() {
-//    return Text(
-//      text: "GOT IT",
-//      color: Color(0xffD02090),
-//    );
-//    return Icon(
-//      Icons.done,
-//      color: Color(0xffD02090),
-//    );
+
   }
 
   Widget renderSkipBtn() {
@@ -121,19 +120,16 @@ class _MyIntroPage extends State<MyIntroPage> {
       // Skip button
       renderSkipBtn: this.renderSkipBtn(),
       onSkipPress: this.onSkipPress,
-//      colorSkipBtn: Color(0x33000000),
-//      highlightColorSkipBtn: Color(0xff000000),
 
       // Next, Done button
       onDonePress: this.onDonePress,
       renderNextBtn: this.renderNextBtn(),
       renderDoneBtn: this.renderDoneBtn(),
-//      colorDoneBtn: Color(0x33000000),
-//      highlightColorDoneBtn: Color(0xff000000),
+
 
       // Dot indicator
-      colorDot: Color(0xffFFFDDD),
-      colorActiveDot: Color(0xffD08111),
+//      colorDot: Color(0xff808080),
+      colorActiveDot: Color(0xffB0C4DE),
       sizeDot: 13.0,
     );
   }

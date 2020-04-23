@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:gender_selection/gender_selection.dart';
+import 'package:gender_selection/gender_selection.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
