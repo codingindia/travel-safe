@@ -28,7 +28,12 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontFamily: 'Roboto'),
         pathImage: "images/safety.png",
-        backgroundColor: Color(0xffD02090),
+
+        colorBegin: Color(0xffFF00FF),
+        colorEnd: Color(0xffD02090),
+        directionColorBegin: Alignment.topRight,
+        directionColorEnd: Alignment.bottomLeft,
+
       ),
     );
     slides.add(
@@ -45,7 +50,11 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontFamily: 'Roboto'),
         pathImage: "images/phone.png",
-        backgroundColor: Color(0xff009981),
+
+        colorBegin: Color(0xff48D1CC),
+        colorEnd: Color(0xff009981),
+        directionColorBegin: Alignment.topRight,
+        directionColorEnd: Alignment.bottomLeft,
       ),
     );
     slides.add(
@@ -63,7 +72,11 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontFamily: 'Roboto'),
         pathImage: "images/tracking.png",
-        backgroundColor: Color(0xff101EBC),
+
+        colorBegin: Color(0xff4169E1),
+        colorEnd: Color(0xff101EBC),
+        directionColorBegin: Alignment.topRight,
+        directionColorEnd: Alignment.bottomLeft,
       ),
     );
   }
@@ -108,15 +121,15 @@ class _MyIntroPage extends State<MyIntroPage> {
       // Skip button
       renderSkipBtn: this.renderSkipBtn(),
       onSkipPress: this.onSkipPress,
-      colorSkipBtn: Color(0x33000000),
-      highlightColorSkipBtn: Color(0xff000000),
+//      colorSkipBtn: Color(0x33000000),
+//      highlightColorSkipBtn: Color(0xff000000),
 
       // Next, Done button
       onDonePress: this.onDonePress,
       renderNextBtn: this.renderNextBtn(),
       renderDoneBtn: this.renderDoneBtn(),
-      colorDoneBtn: Color(0x33000000),
-      highlightColorDoneBtn: Color(0xff000000),
+//      colorDoneBtn: Color(0x33000000),
+//      highlightColorDoneBtn: Color(0xff000000),
 
       // Dot indicator
       colorDot: Color(0xffFFFDDD),
