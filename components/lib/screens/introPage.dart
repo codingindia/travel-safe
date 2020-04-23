@@ -21,16 +21,13 @@ class _MyIntroPage extends State<MyIntroPage> {
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoMono'),
-        description: "Travel-safe simplifies safety for women in the digital world by"
-            "making it easy to stay connected to the nearest police station.",
+            fontFamily: 'SansSerif'),
+        description: "Travel-safe simplifies safety for women in the digital world.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontStyle: FontStyle.italic,
-            fontFamily: 'Raleway'),
+            fontFamily: 'Roboto'),
         pathImage: "images/safety.png",
-//        pathImage: "images/women_safe.png",
         backgroundColor: Color(0xffD02090),
       ),
     );
@@ -41,17 +38,13 @@ class _MyIntroPage extends State<MyIntroPage> {
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoMono'),
-        description: "When travelling alone, it's best to raise your guards, stay alert and make"
-            "use of the technology that entertains you and lies comfortably in your purse - your"
-            "mobile phone, for your safety.",
+            fontFamily: 'San'),
+        description: "When travelling alone, stay alert and make use of technology.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontStyle: FontStyle.italic,
-            fontFamily: 'Raleway'),
+            fontFamily: 'Roboto'),
         pathImage: "images/phone.png",
-//        pathImage: "images/security.jpeg",
         backgroundColor: Color(0xff009981),
       ),
     );
@@ -62,16 +55,13 @@ class _MyIntroPage extends State<MyIntroPage> {
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 30.0,
             fontWeight: FontWeight.bold,
-            fontFamily: 'RobotoMono'),
+            fontFamily: 'San'),
         description:
-        "Travel-safe: - user can create her own private group to share live location tracking "
-            "whenever switched on. When the user decides to share her location, the nearest "
-            "police station also gets a regular update on  it.",
+        "User can create her own private group to share live location tracking.",
         styleDescription:
         TextStyle(color: Color(0xffFFFFFF),
             fontSize: 20.0,
-            fontStyle: FontStyle.italic,
-            fontFamily: 'Raleway'),
+            fontFamily: 'Roboto'),
         pathImage: "images/tracking.png",
         backgroundColor: Color(0xff101EBC),
       ),
