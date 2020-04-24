@@ -8,6 +8,19 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  TextEditingController fullNameInputController;
+  TextEditingController phNoInputController;
+  TextEditingController pwdInputController;
+  TextEditingController confirmPwdInputController;
+
+  @override
+  void initState() {
+    fullNameInputController = new TextEditingController();
+    phNoInputController = new TextEditingController();
+    pwdInputController = new TextEditingController();
+    confirmPwdInputController = new TextEditingController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +34,6 @@ class _RegisterPageState extends State<RegisterPage> {
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             children: <Widget>[
-
               // Full Name TextFormField
               TextFormField(
                 decoration: const InputDecoration(
@@ -32,6 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: 'Enter your full name',
                   labelText: 'Full Name',
                 ),
+                controller: fullNameInputController,
                 inputFormatters: [new LengthLimitingTextInputFormatter(30)],
                 validator: (value) {
                   if (value.isEmpty) {
@@ -51,6 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: 'Enter your phone number',
                   labelText: 'Phone',
                 ),
+                controller: phNoInputController,
                 keyboardType: TextInputType.phone,
                 validator: (value) {
                   if (value.isEmpty) {
@@ -67,6 +81,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: 'Enter chosen password',
                   labelText: 'Password',
                 ),
+                controller: pwdInputController,
                 inputFormatters: [new LengthLimitingTextInputFormatter(30)],
                 validator: (value) {
                   if (value.isEmpty) {
@@ -83,6 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   hintText: 'Re enter chosen password',
                   labelText: 'Re enter Password',
                 ),
+                controller: confirmPwdInputController,
                 inputFormatters: [new LengthLimitingTextInputFormatter(30)],
                 validator: (value) {
                   if (value.isEmpty) {
@@ -106,11 +122,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     textColor: Colors.white,
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
-                        Scaffold.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text("Form Submitted!"),
-                          ),
-                        );
+                        if (pwdInputController.text ==
+                            confirmPwdInputController.text) {
+                        } else {
+                          // If 2 password field not matched
+                        }
                       }
                     }),
               ),
