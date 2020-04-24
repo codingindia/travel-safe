@@ -177,7 +177,21 @@ class _RegisterPageState extends State<RegisterPage> {
                                   .catchError((err) => print(err)))
                               .catchError((err) => print(err));
                         } else {
-                          // If 2 password field not matched
+                          showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text("Error"),
+                                  content: Text("The passwords do not match"),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: Text("Close"))
+                                  ],
+                                );
+                              });
                         }
                       }
                     }),
