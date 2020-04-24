@@ -21,6 +21,8 @@ class _RegisterPageState extends State<RegisterPage> {
           child: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             children: <Widget>[
+
+              // Full Name TextFormField
               TextFormField(
                 decoration: const InputDecoration(
                   icon: const Icon(
@@ -38,6 +40,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
+
+              // Phone no TextFormField
               TextFormField(
                 decoration: const InputDecoration(
                   icon: const Icon(
@@ -55,6 +59,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
+
+              // Password TextFormField
               TextFormField(
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -69,6 +75,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   return null;
                 },
               ),
+
+              // Re Password TextFormField
               TextFormField(
                 obscureText: true,
                 decoration: const InputDecoration(
