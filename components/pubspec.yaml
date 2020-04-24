@@ -45,8 +45,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - images/tracking.png
-    - images/phone.png
+    - images/location.png
+    - images/data.png
     - images/safety.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

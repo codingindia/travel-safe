@@ -31,8 +31,8 @@ class _MyIntroPage extends State<MyIntroPage> {
         marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
         pathImage: "images/safety.png",
 
-        colorBegin: Color(0xffFF00FF),
-        colorEnd: Color(0xffD02090),
+        colorBegin: Color(0xfff14856),
+        colorEnd: Color(0xffcb0073),
         directionColorBegin: Alignment.topRight,
         directionColorEnd: Alignment.bottomLeft,
 
@@ -53,10 +53,10 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontFamily: 'RobotoMono'),
         marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
-        pathImage: "images/phone.png",
+        pathImage: "images/data.png",
 
-        colorBegin: Color(0xff48D1CC),
-        colorEnd: Color(0xff009981),
+        colorBegin: Color(0xffBA55D3),
+        colorEnd: Color(0xff9932CC),
         directionColorBegin: Alignment.topRight,
         directionColorEnd: Alignment.bottomLeft,
       ),
@@ -77,10 +77,10 @@ class _MyIntroPage extends State<MyIntroPage> {
             fontSize: 20.0,
             fontFamily: 'RobotoMono'),
         marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
-        pathImage: "images/tracking.png",
+        pathImage: "images/location.png",
 
-        colorBegin: Color(0xff4169E1),
-        colorEnd: Color(0xff101EBC),
+        colorBegin: Color(0xff00FF00),
+        colorEnd: Color(0xff32CD32),
         directionColorBegin: Alignment.topRight,
         directionColorEnd: Alignment.bottomLeft,
       ),
