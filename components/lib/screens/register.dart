@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,9 +16,13 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController pwdInputController;
   TextEditingController confirmPwdInputController;
 
+  //Firestore variable
+  final String fireStoreCollection = "users";
+
   @override
   void initState() {
     fullNameInputController = new TextEditingController();
+    emailInputController = new TextEditingController();
     phNoInputController = new TextEditingController();
     pwdInputController = new TextEditingController();
     confirmPwdInputController = new TextEditingController();
@@ -144,6 +150,32 @@ class _RegisterPageState extends State<RegisterPage> {
                       if (_formKey.currentState.validate()) {
                         if (pwdInputController.text ==
                             confirmPwdInputController.text) {
+                          FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: emailInputController.text,
+                                  password: pwdInputController.text)
+                              .then((currentUser) => Firestore.instance
+                                  .collection(fireStoreCollection)
+                                  .document(currentUser.user.uid)
+                                  .setData({
+                                    "uid": currentUser.user.uid,
+                                    "name": fullNameInputController.text,
+                                    "phone": phNoInputController.text,
+                                    "email": emailInputController.text
+                                  })
+                                  .then((result) => {
+                                        Scaffold.of(context)
+                                            .showSnackBar(SnackBar(
+                                          content: Text("Registered"),
+                                        )),
+                                        fullNameInputController.clear(),
+                                        emailInputController.clear(),
+                                        phNoInputController.clear(),
+                                        pwdInputController.clear(),
+                                        confirmPwdInputController.clear()
+                                      })
+                                  .catchError((err) => print(err)))
+                              .catchError((err) => print(err));
                         } else {
                           // If 2 password field not matched
                         }
