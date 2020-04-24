@@ -9,6 +9,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   TextEditingController fullNameInputController;
+  TextEditingController emailInputController;
   TextEditingController phNoInputController;
   TextEditingController pwdInputController;
   TextEditingController confirmPwdInputController;
@@ -46,6 +47,25 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 controller: fullNameInputController,
                 inputFormatters: [new LengthLimitingTextInputFormatter(30)],
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'This field is compulsory.';
+                  }
+                  return null;
+                },
+              ),
+
+              TextFormField(
+                decoration: const InputDecoration(
+                  icon: const Icon(
+                    Icons.mail,
+                    color: Colors.blue,
+                  ),
+                  hintText: 'Enter your E-mail id',
+                  labelText: 'E-mail',
+                ),
+                controller: emailInputController,
+                keyboardType: TextInputType.emailAddress,
                 validator: (value) {
                   if (value.isEmpty) {
                     return 'This field is compulsory.';
