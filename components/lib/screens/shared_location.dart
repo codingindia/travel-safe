@@ -274,7 +274,9 @@ class _SharedLocationState extends State<SharedLocation> {
             child: AlphabetListScrollView(
               strList: strList,
               highlightTextStyle: TextStyle(
-                color: Colors.yellow,
+                color: Colors.blueAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 15.0
               ),
               showPreview: true,
               itemBuilder: (context, index) {
