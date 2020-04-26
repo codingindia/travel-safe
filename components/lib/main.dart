@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:travelsafe/panicButton.dart';
+import 'package:travelsafe/screens/shared_location.dart';
 import 'package:travelsafe/screens/maps.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:share/share.dart';
@@ -24,21 +25,22 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    // Start splash screen
     return new SplashScreen(
-        seconds: 14,
-        navigateAfterSeconds: new MyHomePage(),
-        title: new Text('Welcome To Travel Safe',
-          style: new TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20.0
-          ),),
-        image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("Flutter Splash Screen"),
-        loaderColor: Colors.red
+      seconds: 14,
+      navigateAfterSeconds: new MyHomePage(),
+      title: new Text(
+        'Welcome To Travel Safe',
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0
+        ),
+      ),
+      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: () => print("Flutter Splash Screen"),
+      loaderColor: Colors.red
     );
   }
 }
@@ -59,26 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-          title: new Text("Flutter Demo Home Page"),
-          automaticallyImplyLeading: false
+        title: new Text("Travel Safe"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(
+            Icons.map
+          ),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>SharedLocation()));
+          },
+        ),
       ),
       body: new Center(
-
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             PanicButton(),
