@@ -1,9 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:travelsafe/authentication.dart';
 
 class RegisterPage extends StatefulWidget {
+  final BaseAuth auth;
+
+  RegisterPage({this.auth});
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
@@ -150,31 +152,22 @@ class _RegisterPageState extends State<RegisterPage> {
                       if (_formKey.currentState.validate()) {
                         if (pwdInputController.text ==
                             confirmPwdInputController.text) {
-                          FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                                  email: emailInputController.text,
-                                  password: pwdInputController.text)
-                              .then((currentUser) => Firestore.instance
-                                  .collection(fireStoreCollection)
-                                  .document(currentUser.user.uid)
-                                  .setData({
-                                    "uid": currentUser.user.uid,
-                                    "name": fullNameInputController.text,
-                                    "phone": phNoInputController.text,
-                                    "email": emailInputController.text
+                          widget.auth
+                              .signUp(
+                                  emailInputController.text,
+                                  pwdInputController.text,
+                                  fullNameInputController.text,
+                                  phNoInputController.text)
+                              .then((result) => {
+                                    Scaffold.of(context).showSnackBar(SnackBar(
+                                      content: Text("Registered"),
+                                    )),
+                                    fullNameInputController.clear(),
+                                    emailInputController.clear(),
+                                    phNoInputController.clear(),
+                                    pwdInputController.clear(),
+                                    confirmPwdInputController.clear()
                                   })
-                                  .then((result) => {
-                                        Scaffold.of(context)
-                                            .showSnackBar(SnackBar(
-                                          content: Text("Registered"),
-                                        )),
-                                        fullNameInputController.clear(),
-                                        emailInputController.clear(),
-                                        phNoInputController.clear(),
-                                        pwdInputController.clear(),
-                                        confirmPwdInputController.clear()
-                                      })
-                                  .catchError((err) => print(err)))
                               .catchError((err) => print(err));
                         } else {
                           showDialog(
