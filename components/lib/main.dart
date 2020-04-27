@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:travelsafe/authentication.dart';
 import 'package:travelsafe/panicButton.dart';
 import 'package:travelsafe/screens/maps.dart';
 import 'package:geolocator/geolocator.dart';
@@ -54,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ..forceAndroidLocationManager;
   Position _currentPosition;
 
+  final Auth _auth = new Auth();
 
   @override
   Widget build(BuildContext context) {
@@ -104,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context)=>RegisterPage()
+                      builder: (context)=>RegisterPage(auth: _auth)
                     )
                   );
                 }
