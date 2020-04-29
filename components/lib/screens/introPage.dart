@@ -120,7 +120,7 @@ class _MyIntroPage extends State<MyIntroPage> {
               ? Stack(
             children: <Widget>[
               Align(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.bottomRight,
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 10.0),
                   child: FlatButton(
@@ -135,7 +135,7 @@ class _MyIntroPage extends State<MyIntroPage> {
                 ),
               ),
               Align(
-                alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomLeft,
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 10.0),
                   child: FlatButton(
