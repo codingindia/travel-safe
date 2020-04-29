@@ -9,7 +9,7 @@ var color2 = Color(0xffa6882c);
 var color2b = Color(0xff534416);
 var color3 = Color(0xff00FF00);
 var color3b = Color(0xff129314);
-//var color3 = Color(0xffff8903);
+
 
 List<String> image = ['safety.png', 'technology.png', 'location.png'];
 
@@ -126,7 +126,7 @@ class _MyIntroPage extends State<MyIntroPage> {
                   child: FlatButton(
                     onPressed: () {},
                     child: Text(
-                      'REGISTER',
+                      'LOGIN',
                       style: TextStyle(
                           color: Color(0xFFffffff),
                           fontWeight: FontWeight.w600),
@@ -139,9 +139,11 @@ class _MyIntroPage extends State<MyIntroPage> {
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 10.0),
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      navigateToRegisterPage(context);
+                    },
                     child: Text(
-                      'LOGIN',
+                      'REGISTER',
                       style: TextStyle(
                           color: Color(0xFFffffff),
                           fontWeight: FontWeight.w600),
@@ -174,6 +176,10 @@ class _MyIntroPage extends State<MyIntroPage> {
       ),
     );
   }
+}
+
+Future navigateToRegisterPage(context) async {
+  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RegisterPage()));
 }
 
 class CarouselComponent extends StatelessWidget {
