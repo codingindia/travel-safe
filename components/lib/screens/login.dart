@@ -108,7 +108,6 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.white
               ),
               decoration: InputDecoration(
-                icon: Icon(Icons.phone,color: Colors.white,),
                 labelText: "Phone number",
                 hintText: "Enter your phone number",
                 labelStyle: TextStyle(
