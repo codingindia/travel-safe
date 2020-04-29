@@ -1,6 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
 import 'package:travelsafe/screens/register.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+
+var color1 = Color(0xfff14856);
+var color1b = Color(0xffcb0073);
+var color2 = Color(0xffa6882c);
+var color2b = Color(0xff534416);
+var color3 = Color(0xff00FF00);
+var color3b = Color(0xff129314);
+//var color3 = Color(0xffff8903);
+
+List<String> image = ['safety.png', 'technology.png', 'location.png'];
+
+List<String> title = [
+  'WOMEN SAFETY',
+  'TECHNOLOGY',
+  'TRACKING',
+];
+
+List<String> text = [
+  'Travel-safe simplifies safety for women in the digital world.',
+  'When travelling alone, stay alert and make use of technology.',
+  'User can create her own private group to share live location tracking.'
+];
 
 class MyIntroPage extends StatefulWidget {
   @override
@@ -8,129 +31,250 @@ class MyIntroPage extends StatefulWidget {
 }
 
 class _MyIntroPage extends State<MyIntroPage> {
-  List<Slide> slides = new List();
-
-  @override
-  void initState() {
-    super.initState();
-
-    slides.add(
-      new Slide(
-        title: "WOMEN SAFETY",
-        styleTitle:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
-        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
-        description: "Travel-safe simplifies safety for women in the digital world.",
-        styleDescription:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 20.0,
-            fontFamily: 'RobotoMono'),
-        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
-        pathImage: "images/safety.png",
-
-        colorBegin: Color(0xfff14856),
-        colorEnd: Color(0xffcb0073),
-        directionColorBegin: Alignment.topRight,
-        directionColorEnd: Alignment.bottomLeft,
-
-      ),
-    );
-    slides.add(
-      new Slide(
-        title: "TECHNOLOGY",
-        styleTitle:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
-        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
-        description: "When travelling alone, stay alert and make use of technology.",
-        styleDescription:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 20.0,
-            fontFamily: 'RobotoMono'),
-        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
-        pathImage: "images/data.png",
-
-        colorBegin: Color(0xffBA55D3),
-        colorEnd: Color(0xff9932CC),
-        directionColorBegin: Alignment.topRight,
-        directionColorEnd: Alignment.bottomLeft,
-      ),
-    );
-    slides.add(
-      new Slide(
-        title: "TRACKING",
-        styleTitle:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 30.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'OpenSans'),
-        marginTitle: EdgeInsets.only(left: 50.0, right: 50.0, top: 100.0, bottom:40.0),
-        description:
-        "User can create her own private group to share live location tracking.",
-        styleDescription:
-        TextStyle(color: Color(0xffFFFFFF),
-            fontSize: 20.0,
-            fontFamily: 'RobotoMono'),
-        marginDescription: EdgeInsets.only(left: 50.0, right: 50.0, top: 40.0),
-        pathImage: "images/location.png",
-
-        colorBegin: Color(0xff00FF00),
-        colorEnd: Color(0xff32CD32),
-        directionColorBegin: Alignment.topRight,
-        directionColorEnd: Alignment.bottomLeft,
-      ),
-    );
-  }
-
-  void onDonePress() {
-    // go to next screen
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => RegisterPage()));
-  }
-
-  void onSkipPress() {
-    // skip the intro screen
-    Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => RegisterPage()));
-  }
-
-  Widget renderNextBtn() {
-
-  }
-
-  Widget renderDoneBtn() {
-
-  }
-
-  Widget renderSkipBtn() {
-
-  }
+  CarouselSlider carouselSlider;
+  int carouselIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return new IntroSlider(
-      // List slides
-      slides: this.slides,
+    carouselSlider = CarouselSlider(
+      viewportFraction: 1.0,
+      enableInfiniteScroll: false,
+      onPageChanged: (index) {
+        setState(() {
+          carouselIndex = index;
+        });
+      },
+      height: MediaQuery.of(context).size.height,
+      items: <Widget>[
+        CarouselComponent(
+          col1: color1,
+          col2: color1b,
+          imgUrl: image[0],
+          ttl: title[0],
+          txt: text[0],
+        ),
+        CarouselComponent(
+          col1: color2,
+          col2: color2b,
+          imgUrl: image[1],
+          ttl: title[1],
+          txt: text[1],
+        ),
+        CarouselComponent(
+          col1: color3,
+          col2: color3b,
+          imgUrl: image[2],
+          ttl: title[2],
+          txt: text[2],
+        ),
+      ],
+    );
 
-      // Skip button
-      renderSkipBtn: this.renderSkipBtn(),
-      onSkipPress: this.onSkipPress,
-
-      // Next, Done button
-      onDonePress: this.onDonePress,
-      renderNextBtn: this.renderNextBtn(),
-      renderDoneBtn: this.renderDoneBtn(),
-
-
-      // Dot indicator
-//      colorDot: Color(0xff808080),
-      colorActiveDot: Color(0xffB0C4DE),
-      sizeDot: 13.0,
+    return Scaffold(
+      floatingActionButton: carouselIndex == 2
+          ? Container()
+          : Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: FlatButton(
+              onPressed: () {
+                carouselSlider.nextPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.ease);
+              },
+              child: Container(
+                margin: const EdgeInsets.only(left: 30.0),
+                child: Text(
+                  'SKIP',
+                  style: TextStyle(
+                      color: Color(0xFFffffff),
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: FlatButton(
+              onPressed: () {
+                carouselSlider.nextPage(
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.ease);
+              },
+              child: Text(
+                'NEXT',
+                style: TextStyle(
+                    color: Color(0xFFffffff),
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          carouselSlider,
+          carouselIndex == 2
+              ? Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 10.0),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'REGISTER',
+                      style: TextStyle(
+                          color: Color(0xFFffffff),
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 10.0),
+                  child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'LOGIN',
+                      style: TextStyle(
+                          color: Color(0xFFffffff),
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          )
+              : Positioned(
+            bottom: 30,
+            child: Row(
+              children: <Widget>[
+                Indicator(
+                  carouselIndex: carouselIndex,
+                  indicatorIndex: 0,
+                ),
+                Indicator(
+                  carouselIndex: carouselIndex,
+                  indicatorIndex: 1,
+                ),
+                Indicator(
+                  carouselIndex: carouselIndex,
+                  indicatorIndex: 2,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+class CarouselComponent extends StatelessWidget {
+  final col1, col2, imgUrl, ttl, txt;
+
+  CarouselComponent({this.col1, this.col2, this.imgUrl, this.ttl, this.txt});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      padding: EdgeInsets.only(right: 0),
+      color: col2,
+      child: Container(
+        decoration: BoxDecoration(
+//          color: col1,
+            gradient: LinearGradient(
+              colors: [col1,col2],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            )
+//          borderRadius: BorderRadius.only(
+////            bottomRight: Radius.circular(180),
+//          ),
+        ),
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 100,
+            ),
+
+            SizedBox(
+              height: 100,
+            ),
+            Image.asset(
+              imgUrl,
+              height: 100,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              ttl,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 36,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Text(
+                txt,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+
+            //Show divider line close to the bottom
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 60.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Divider(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Indicator extends StatelessWidget {
+  final carouselIndex, indicatorIndex;
+
+  Indicator({this.carouselIndex, this.indicatorIndex});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 13,
+      width: 13,
+      margin: EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: carouselIndex == indicatorIndex ? Colors.white : Colors.grey,
+      ),
+    );
+  }
+}
+
