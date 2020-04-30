@@ -214,33 +214,14 @@ class _SharedLocationState extends State<SharedLocation> {
       // backgroundColor: Colors.transparent,
       body: Column(
         children: <Widget>[
-          SizedBox(height: height*0.0325,),
-          _getAppBar(),
+          SizedBox(height: height*0.041,),
+          // _getAppBar(),
           SizedBox(height: height*0.02,),
           Padding(
             padding: const EdgeInsets.only(left:8.0,right: 8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      'Matches',
-                      style: TextStyle(
-                        color: Colors.grey
-                      ),
-                    ),
-                    SizedBox(width: width*0.02,),
-                    Container(
-                      width: width*0.05,
-                      height: height*0.025,
-                      decoration: BoxDecoration(
-                        color: Colors.deepOrange,
-                        shape: BoxShape.circle
-                      ),
-                    )
-                  ],
-                ),
                 Row(
                   children: <Widget>[
                     Text(
