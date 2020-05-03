@@ -1,196 +1,163 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
+import 'package:splashscreen/splashscreen.dart';
+import 'package:travelsafe/panicButton.dart';
+import 'package:travelsafe/screens/shared_location.dart';
+import 'package:travelsafe/screens/maps.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:share/share.dart';
+import 'package:travelsafe/screens/register.dart';
+import 'package:travelsafe/screens/login.dart';
+import 'package:travelsafe/screens/introPage.dart';
 
-import 'groupdetails.dart';
-import 'groupstatus.dart';
-import 'homepage.dart';
-import 'loadingindicator.dart';
-import 'signinpage.dart';
-import 'signuppage.dart';
-
-var popflag = 0;
-List<UserData> users = new List<UserData>();
-logindetails logindet = new logindetails();
-groupDetails grpd = new groupDetails();
-
-final ThemeData kIOSTheme = new ThemeData(
-  primarySwatch: Colors.blueGrey,
-  accentColor: Colors.blueGrey,
-);
-
-final ThemeData kDefaultTheme = new ThemeData(
-  primarySwatch: Colors.blueGrey,
-  accentColor: Colors.blueGrey,
-);
 
 void main() {
-
-  runApp(
-    new MaterialApp(
-        title: "Travel Safe",
-        home: new SignInForm(),
-        theme: defaultTargetPlatform == TargetPlatform.iOS
-            ? kIOSTheme
-            : kDefaultTheme,
-        // ignore: missing_return
-        onGenerateRoute: (RouteSettings settings) {
-          // ignore: missing_return
-          switch (settings.name) {
-            case '/a':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new SignupLayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute(
-                      builder: (_) => new SignupLayout(),
-                      settings: settings,
-                    );
-
-            case '/b':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new Homepagelayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute(
-                      builder: (_) => new Homepagelayout(),
-                      settings: settings,
-                    );
-            case '/c':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new addGroup(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new addGroup(),
-                      settings: settings,
-                    );
-            case '/d':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new groupstatuslayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new groupstatuslayout(),
-                      settings: settings,
-                    );
-            case '/g':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new MapSample(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new MapSample(),
-                      settings: settings,
-                    );
-          }
-          assert(false);
-        }),
-  );
+  runApp(new MaterialApp(
+    home: new MyIntroPage(),
+  ));
 }
 
-class MyCustomRoute<T> extends MaterialPageRoute<T> {
-  MyCustomRoute({WidgetBuilder builder, RouteSettings settings})
-      : super(builder: builder, settings: settings);
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => new _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return new SplashScreen(
+      seconds: 14,
+      navigateAfterSeconds: new MyHomePage(),
+      title: new Text(
+        'Welcome To Travel Safe',
+        style: new TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20.0
+        ),
+      ),
+      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
+      backgroundColor: Colors.white,
+      styleTextUnderTheLoader: new TextStyle(),
+      photoSize: 100.0,
+      onClick: () => print("Flutter Splash Screen"),
+      loaderColor: Colors.red
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  final Geolocator geolocator = Geolocator()
+    ..forceAndroidLocationManager;
+  Position _currentPosition;
+
 
   @override
-  Widget buildTransitions(BuildContext context, Animation<double> animation,
-      Animation<double> secondaryAnimation, Widget child) {
-    if (settings.isInitialRoute) return child;
-    return new FadeTransition(opacity: animation, child: child);
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text("Travel Safe"),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(
+            Icons.map
+          ),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>SharedLocation()));
+          },
+        ),
+      ),
+      body: new Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            PanicButton(),
+            FlatButton(
+              padding: EdgeInsets.all(8.0),
+              splashColor: Colors.blueAccent,
+              color: Colors.blue,
+              textColor: Colors.white,
+              child: Text("Share Location"),
+              onPressed: () {
+                //get the current location when flat button is pressed
+                _getCurrentLocation();
+                //share latitude and longitude in map to other applications on the device
+                _shareMap();
+              },
+            ),
+            RaisedButton(
+                child: Text("Register"),
+                color: Colors.blue,
+                textColor: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=>RegisterPage()
+                    )
+                  );
+                }
+            ),
+            RaisedButton(
+                child: Text("Login"),
+                color: Colors.blue,
+                textColor: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=>LoginPage()
+                    )
+                  );
+                }
+            ),
+          ],
+        ),
+
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(
+              builder: (BuildContext context) => AnimateCamera(13.0, 77.0)));
+        },
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
-}
 
-class MyCustomRoute1<T> extends MaterialPageRoute<T> {
-  MyCustomRoute1({WidgetBuilder builder, RouteSettings settings})
-      : super(builder: builder, settings: settings);
-
-  @override
-  Widget TransitionBuilder(BuildContext context, Animation<Offset> animation,
-      Animation<double> secondaryAnimation, Widget child) {
-    if (settings.isInitialRoute) return child;
-    return new SlideTransition(position: animation, child: child);
+  // This method/function gets the current user location
+  _getCurrentLocation() {
+    geolocator
+        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+        .then((Position position) {
+      setState(() {
+        _currentPosition = position;
+      });
+    }).catchError((e) {
+      print(e);
+    });
   }
-}
 
-class UserData {
-  UserData(
-      {this.EmailId,
-      this.password,
-      this.name,
-      this.locationShare,
-      this.groupsIamin,
-      this.location});
-  String EmailId;
-  String password;
-  String name;
-  bool locationShare;
-  Map<String, double> location = null;
-  List<String> groupsIamin = [];
-
-  UserData.fromJson(Map value) {
-    EmailId = value["emailid"];
-    name = value["name"];
-    locationShare = value["locationShare"];
-    groupsIamin = value["groupsIamin"];
+  // This method/function share the current user location in map view given all application on the
+  // the device that allows sharing
+  _shareMap() {
+    final RenderBox box = context.findRenderObject();
+    Share.share(
+        'https://www.google.com/maps/search/?api=1&query=${_currentPosition
+            .latitude},${_currentPosition.longitude}',
+        sharePositionOrigin:
+        box.localToGlobal(Offset.zero) &
+        box.size);
   }
-  Map toJson() {
-    return {
-      "name": name,
-      "locationShare": locationShare,
-      "groupsIamin": groupsIamin,
-      "emailid": EmailId,
-      "location": location
-    };
-  }
-}
 
-class logindetails {
-  logindetails({this.EmailId, this.password});
-  String EmailId = '';
-  String password = '';
-  //String name = '';
-}
-
-class groupDetails {
-  groupDetails({this.groupname, this.groupmembers});
-  String groupname = "";
-  List<UserData> groupmembers = [];
-
-  groupDetails.fromJson(Map value) {
-    groupname = value["groupname"];
-//    print("value of members:${value["members"]}");
-    groupmembers = value["members"];
-  }
-  Map toJson() {
-    return {"groupname": groupname, "members": groupmembers};
-  }
-}
-
-class currentLoc {
-  String EmailId;
-  Map<String, double> currentLocation;
-  currentLoc({this.EmailId, this.currentLocation});
-
-  currentLoc.fromJson(Map value) {
-    EmailId = value["emailid"];
-//    print("value of members:${value["members"]}");
-    currentLocation = value["location"];
-  }
-}
-
-class locationclass {
-  double latitude;
-  double longitude;
-
-  locationclass({this.latitude, this.longitude});
-
-  Map toJson() {
-    return {"latitude": latitude, "longitude": longitude};
-  }
 }
