@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:641557136145:android:724c8cc15c4b53e372c2b0",
+        "mobilesdk_app_id": "1:641557136145:android:029e03b08e2cb32772c2b0",
         "android_client_info": {
           "package_name": "org.codingindia.travelsafe"
         }
@@ -21,7 +21,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAtzI1pTdjPcMBGPbeiOVGZq_3gkmwtqjI"
+          "current_key": "AIzaSyAbafPkq2n56C-MfpLAbev3VQ1LiUk9EtI"
         }
       ],
       "services": {
