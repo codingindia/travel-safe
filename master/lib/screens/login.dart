@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             _buildSocialButton(
               ()=>print("Social login"),
-              AssetImage("assets/images/google.jpg"),
+              AssetImage("assets/images/googleicon.png"),
             ),
           ],
         ),
