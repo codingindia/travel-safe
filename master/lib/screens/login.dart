@@ -15,85 +15,19 @@ class _LoginPageState extends State<LoginPage> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
   bool _rememberme=false;
 
-  Widget _signInWithText(){
-      return Column(
-        children: <Widget>[
-          Text(
-            '- OR -',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            'Sign in with',
-          )
-        ],
-      );
-  }
-
-
-
-  Widget _buildSocialButton(Function onTap, AssetImage logo){
-      return GestureDetector(
-          onTap: onTap,
-          child: Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  offset: Offset(0,2),
-                  blurRadius: 6.0,
-                )
-              ],
-              image: DecorationImage(
-                image: logo, 
-              ),
-            ),
-          ),
-
-      );
-  }
-
-  Widget _buildSocialRow(){
-      return Padding(
-        padding: EdgeInsets.symmetric(vertical: 30),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            _buildSocialButton(
-              ()=>print("Social login"),
-              AssetImage("assets/images/facebook.jpg"),
-            ),
-            _buildSocialButton(
-              ()=>print("Social login"),
-              AssetImage("assets/images/googleicon.png"),
-            ),
-          ],
-        ),
-      );
-  }
-
-
   Widget _displaylogo(){
       return Container(
-            // padding: EdgeInsets.all(80),
-            alignment: Alignment.center,
-            height: 150,
-            width: 150,
+            
+            //padding: EdgeInsets.all(150),
+            alignment: Alignment.bottomCenter,
+            height: 100,
+            width: 100,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               image: DecorationImage(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 fit: BoxFit.fill, 
-                image: AssetImage("assets/images/logo.png")),
+                image: AssetImage("assets/images/travelsafelogo.png")),
             ),
           );
   }
@@ -197,6 +131,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _displaySignUpRedirect(){
     return Container(
+              
               child: Row(children: <Widget>[
                 Text("Don't have an account?"),
                 FlatButton(textColor: Colors.black,
@@ -242,20 +177,18 @@ class _LoginPageState extends State<LoginPage> {
         autovalidate: true,
         child: ListView(
           shrinkWrap: true,
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          padding: const EdgeInsets.symmetric(horizontal: 5.0,vertical: 80.0),
           children: <Widget>[
             _displayPhoneInputField(),
             _displayPasswordField(),
             FlatButton(onPressed: (){print("Forgot Password!");}, textColor: Colors.blue, child: Text("Forgot Password?",style: TextStyle(color: Colors.white),),padding: EdgeInsets.only(right: 0.0),),
-            SizedBox(height: 20),
-            _displayRememberMe(),
-            SizedBox(height: 20),
-            _displayLoginSubmitButton(context),
-            SizedBox(height: 20),
-            _signInWithText(),
-            _buildSocialRow(),
-            _displaySignUpRedirect(),
             SizedBox(height: 10),
+            _displayRememberMe(),
+            SizedBox(height: 10),
+            _displayLoginSubmitButton(context),
+            SizedBox(height: 90),
+            _displaySignUpRedirect(),
+            SizedBox(height: 80,width: 25,),
           ],
         ),
       );
@@ -279,7 +212,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         child: Column(
         children: <Widget>[
-          SizedBox(height: 10),
+          SizedBox(height: 80),
           _displaylogo(),
           SizedBox(height: 10,),
           _displayForm(context),
