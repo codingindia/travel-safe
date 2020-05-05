@@ -55,6 +55,7 @@ flutter:
     - assets/images/logo.png
     - assets/images/facebook.jpg
     - assets/images/google.jpg
+    - assets/images/googleicon.png
     - assets/images/location.png
     - assets/images/safety.png
     - assets/images/technology.png
