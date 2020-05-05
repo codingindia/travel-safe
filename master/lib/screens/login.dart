@@ -19,13 +19,13 @@ class _LoginPageState extends State<LoginPage> {
       return Container(
             
             //padding: EdgeInsets.all(150),
-            alignment: Alignment.bottomCenter,
-            height: 100,
-            width: 100,
+            alignment: Alignment.center,
+            height: 190,
+            width: 190,
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
               image: DecorationImage(
-                alignment: Alignment.bottomCenter,
+                alignment: Alignment.topCenter,
                 fit: BoxFit.fill, 
                 image: AssetImage("assets/images/travelsafelogo.png")),
             ),
@@ -39,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: TextFormField(
               style: TextStyle(
+    
                 color: Colors.white
               ),
               decoration: InputDecoration(
@@ -177,7 +178,7 @@ class _LoginPageState extends State<LoginPage> {
         autovalidate: true,
         child: ListView(
           shrinkWrap: true,
-          padding: const EdgeInsets.symmetric(horizontal: 5.0,vertical: 80.0),
+          padding: const EdgeInsets.symmetric(horizontal: 5.0,vertical:10),
           children: <Widget>[
             _displayPhoneInputField(),
             _displayPasswordField(),
@@ -186,9 +187,9 @@ class _LoginPageState extends State<LoginPage> {
             _displayRememberMe(),
             SizedBox(height: 10),
             _displayLoginSubmitButton(context),
-            SizedBox(height: 90),
+            SizedBox(height: 30),
             _displaySignUpRedirect(),
-            SizedBox(height: 80,width: 25,),
+            SizedBox(height: 10,width: 25,),
           ],
         ),
       );
@@ -205,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
       // ),
       body: SingleChildScrollView(
         child: Container(
-        padding: EdgeInsets.all(25),
+        padding: EdgeInsets.all(20),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [Colors.redAccent,Colors.pink],begin: Alignment.topLeft,end: Alignment.bottomRight),
