@@ -211,11 +211,11 @@ class _LoginPageState extends State<LoginPage> {
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [Colors.redAccent,Colors.pink],begin: Alignment.topLeft,end: Alignment.bottomRight),
         ),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
         child: Column(
         children: <Widget>[
-          SizedBox(height: 80),
           _displaylogo(),
-          SizedBox(height: 10,),
           _displayForm(context),
         ],
       )
