@@ -1,9 +1,21 @@
+![Flutter](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png)
+Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
+
+## Installation
+-   For [Windows](https://flutter.dev/docs/get-started/install/windows)
+-   For [MacOS](https://flutter.dev/docs/get-started/install/macos)
+-   For [Linux](https://flutter.dev/docs/get-started/install/linux)
+
 # Travel Safe
-Being Concerned with the increasing brutality and insecurities faced by women during their travel, Travel Safe - A Flutter Application will help in preventing such instances and will promote safe and secure travel. 
+Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
+**Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
+If you think that your notable tech skills can help women of our country travel safely, Please be a part of Travel Safe and join our mission to make the world a safer place.
+<p align="center">
+<img src="https://github.com/codingindia/travel-safe/blob/development/.github/Travel_Safe.png" width="300" height="300"></br></p>
 
 ## Getting Started
+ This project is in the early stage of development. So anyone who is willing to Contribute can have a look at it . If you face any issue   or confusion while contributing , we will be happy to help you with it.
 
-This project is in the early stage of development. So anyone who is willing to Contribute can have a look at it . If you face any issue or confusion while contributing , we will be happy to help you with it.
 ## How to Use 
 
 **Step 1:**
@@ -60,7 +72,6 @@ Here is the folder structure we have been using in this project
 lib/
 |- screens/
 |- main.dart
-|- panicButton.dart
 ```
 
 Now, lets dive into the lib folder which has the main code for the application.
@@ -68,7 +79,6 @@ Now, lets dive into the lib folder which has the main code for the application.
 ```
 1- screens - This Contains all the screens which will be available in the App.
 2- main.dart - This is the starting point of the application. All the application level configurations are defined in this file i.e, theme, routes, title, orientation etc.
-3- panicButton.dart-This contains the code for Panic button.
 ```
 
 ### screens
