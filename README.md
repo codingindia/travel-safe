@@ -47,8 +47,16 @@ You will be able to run the project Successfully with the help of these steps.
 
 ### Technologies Used
 
-- [Flutter](https://flutter.dev/)
-- [Firebase](https://firebase.google.com/)
+## [Flutter](https://flutter.dev/) </br>
+ Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase. Flutter works   with existing code, is used by developers and organizations around the world, and is free and open source.
+
+### Installation
+ -   For [Windows](https://flutter.dev/docs/get-started/install/windows)
+ -   For [MacOS](https://flutter.dev/docs/get-started/install/macos)
+ -   For [Linux](https://flutter.dev/docs/get-started/install/linux)
+ </br>
+
+## [Firebase](https://firebase.google.com/)
 
 ### Folder Structure
 Here is the core folder structure which flutter provides.
@@ -126,15 +134,7 @@ We have the following branches
    This contains the stable code. After significant features/bugfixes are accumulated on development, we move it to master.
    
  * [**Code Of Conduct**](https://github.com/codingindia/travel-safe/blob/development/CODE_OF_CONDUCT.md)
-
-![Flutter](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png)
-Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
-
-## Installation
--   For [Windows](https://flutter.dev/docs/get-started/install/windows)
--   For [MacOS](https://flutter.dev/docs/get-started/install/macos)
--   For [Linux](https://flutter.dev/docs/get-started/install/linux)
-
+ </br>
 
 ## Conclusion
 
