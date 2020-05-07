@@ -1,17 +1,13 @@
-![Flutter](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png)
-Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
-
-## Installation
--   For [Windows](https://flutter.dev/docs/get-started/install/windows)
--   For [MacOS](https://flutter.dev/docs/get-started/install/macos)
--   For [Linux](https://flutter.dev/docs/get-started/install/linux)
-
 # Travel Safe
 Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
 **Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
 If you think that your notable tech skills can help women of our country travel safely, Please be a part of Travel Safe and join our mission to make the world a safer place.
+
 <p align="center">
 <img src="https://github.com/codingindia/travel-safe/blob/development/.github/Travel_Safe.png" width="300" height="300"></br></p>
+
+# [Join our Slack Channel](https://join.slack.com/t/coding-india/shared_invite/zt-e4aqrqk4-jVpEmDrnT~q_EwTJ_SRNpw)
+
 
 ## Getting Started
  This project is in the early stage of development. So anyone who is willing to Contribute can have a look at it . If you face any issue   or confusion while contributing , we will be happy to help you with it.
@@ -131,8 +127,14 @@ We have the following branches
    
  * [**Code Of Conduct**](https://github.com/codingindia/travel-safe/blob/development/CODE_OF_CONDUCT.md)
 
-## Slack
-### [Join our Slack Channel](https://join.slack.com/t/coding-india/shared_invite/zt-e4aqrqk4-jVpEmDrnT~q_EwTJ_SRNpw)
+![Flutter](https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png)
+Flutter is Google's SDK for crafting beautiful, fast user experiences for mobile, web and desktop from a single codebase. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source.
+
+## Installation
+-   For [Windows](https://flutter.dev/docs/get-started/install/windows)
+-   For [MacOS](https://flutter.dev/docs/get-started/install/macos)
+-   For [Linux](https://flutter.dev/docs/get-started/install/linux)
+
 
 ## Conclusion
 
