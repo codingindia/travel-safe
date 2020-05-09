@@ -8,156 +8,135 @@ import 'package:share/share.dart';
 import 'package:travelsafe/screens/register.dart';
 import 'package:travelsafe/screens/login.dart';
 import 'package:travelsafe/screens/introPage.dart';
+import 'package:travelsafe/screens/group.dart';
+import 'package:travelsafe/screens/track.dart';
 
-
-void main() {
-  runApp(new MaterialApp(
-    home: new MyIntroPage(),
-  ));
-}
-
-
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return new SplashScreen(
-      seconds: 14,
-      navigateAfterSeconds: new MyHomePage(),
-      title: new Text(
-        'Welcome To Travel Safe',
-        style: new TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 20.0
-        ),
-      ),
-      image: new Image.network('https://i.imgur.com/TyCSG9A.png'),
-      backgroundColor: Colors.white,
-      styleTextUnderTheLoader: new TextStyle(),
-      photoSize: 100.0,
-      onClick: () => print("Flutter Splash Screen"),
-      loaderColor: Colors.red
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  final Geolocator geolocator = Geolocator()
-    ..forceAndroidLocationManager;
-  Position _currentPosition;
-
+class MyStatefulWidget extends StatefulWidget {
+  MyStatefulWidget({Key key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Travel Safe"),
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-          icon: Icon(
-            Icons.map
-          ),
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>SharedLocation()));
-          },
-        ),
-      ),
-      body: new Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            PanicButton(),
-            FlatButton(
-              padding: EdgeInsets.all(8.0),
-              splashColor: Colors.blueAccent,
-              color: Colors.blue,
-              textColor: Colors.white,
-              child: Text("Share Location"),
-              onPressed: () {
-                //get the current location when flat button is pressed
-                _getCurrentLocation();
-                //share latitude and longitude in map to other applications on the device
-                _shareMap();
-              },
-            ),
-            RaisedButton(
-                child: Text("Register"),
-                color: Colors.blue,
-                textColor: Colors.white,
-                padding: EdgeInsets.all(8.0),
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context)=>RegisterPage()
-                    )
-                  );
-                }
-            ),
-            RaisedButton(
-                child: Text("Login"),
-                color: Colors.blue,
-                textColor: Colors.white,
-                padding: EdgeInsets.all(8.0),
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context)=>LoginPage()
-                    )
-                  );
-                }
-            ),
-          ],
-        ),
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+}
 
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context, MaterialPageRoute(
-              builder: (BuildContext context) => AnimateCamera(13.0, 77.0)));
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  // This method/function gets the current user location
-  _getCurrentLocation() {
-    geolocator
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
-        .then((Position position) {
-      setState(() {
-        _currentPosition = position;
-      });
-    }).catchError((e) {
-      print(e);
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+      if (index == 0) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Track()),
+        );
+      }
+      if (index == 1) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => main()),
+        );
+      }
+      if (index == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Group()),
+        );
+      }
     });
   }
 
-  // This method/function share the current user location in map view given all application on the
-  // the device that allows sharing
-  _shareMap() {
-    final RenderBox box = context.findRenderObject();
-    Share.share(
-        'https://www.google.com/maps/search/?api=1&query=${_currentPosition
-            .latitude},${_currentPosition.longitude}',
-        sharePositionOrigin:
-        box.localToGlobal(Offset.zero) &
-        box.size);
+Widget _displayalertlogo(){
+      return Container(
+            
+            //padding: EdgeInsets.all(150),
+            alignment: Alignment.center,
+            height: 190,
+            width: 190,
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              image: DecorationImage(
+                alignment: Alignment.topCenter,
+                fit: BoxFit.fill, 
+                image: AssetImage("assets/images/alertlogo.png")),
+            ),
+          );
+  }
+  Widget _displaysharelogo(){
+      return Container(
+            
+            //padding: EdgeInsets.all(150),
+            alignment: Alignment.center,
+            height: 190,
+            width: 190,
+            decoration: BoxDecoration(
+              shape: BoxShape.rectangle,
+              image: DecorationImage(
+                alignment: Alignment.topCenter,
+                fit: BoxFit.fill, 
+                image: AssetImage("assets/images/sharelogo.png")),
+            ),
+          );
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Travel Safe'),
+        backgroundColor: Colors.blueAccent,
+        actions: <Widget>[
+        ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+        child: ListView(
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.bookmark_border,
+              color: Colors.black54,
+            ),
+            title: Text(
+              'Track',
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black54,
+            ),
+            title: Text(
+              'Home',
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.group,
+              color: Colors.black54,
+            ),
+            title: Text(
+              'Group',
+              style: TextStyle(
+                color: Colors.black54,
+              ),
+            ),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
+      ),
+    );
+  }
 }
