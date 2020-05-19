@@ -20,6 +20,7 @@ dependencies:
   gradient_app_bar:
   flutter:
     sdk: flutter
+  circular_profile_avatar: ^1.0.6
   google_maps_flutter: ^0.5.24+1
   location_permissions: ^2.0.4+1
   location: ^2.5.3
