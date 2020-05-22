@@ -11,24 +11,6 @@ class AboutUs extends StatefulWidget {
 class _AboutUsState extends State<AboutUs> {
 
   bool need = false, mission = false, working = false, contributors = false;
-  dynamic data;
-
-  Future<dynamic> getData() async{
-    final DocumentReference document = Firestore.instance.collection("contributors").document("LE7EwutFHF15yEcQnLyK");
-
-    await document.get().then<dynamic>(
-      (DocumentSnapshot snap) async{
-        setState(() {
-          data = snap.data;
-        });
-      }
-    );
-  }
-  @override
-  void initState(){
-    super.initState();
-    getData();
-  }
   
   
   Widget _displayLogo(){
@@ -126,20 +108,7 @@ class _AboutUsState extends State<AboutUs> {
       );
   }
 
-  Widget getContributorsWidget(){
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-                data.isEmpty?Container():Text(data['name'])
-            ],
-          ),
-        ],
-      ), 
-    );
-  }
-
+  
   
   Widget _card(String text){
     return GestureDetector(
