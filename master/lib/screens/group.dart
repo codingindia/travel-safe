@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './BottomBar.dart';
+
+void main() => runApp(Group());
 
 class Group extends StatefulWidget {
   @override
@@ -9,30 +10,18 @@ class Group extends StatefulWidget {
 class _GroupState extends State<Group> {
   @override
   Widget build(BuildContext context) {
-      return Container(
-      alignment: Alignment.center,
-      color: Colors.white,
-       child: Column(
-         children: <Widget>[
-           Text("This is Groups Screens",
-           style: TextStyle(
-          decoration: TextDecoration.none
-         )
-        ),
-
-
-          Expanded(
-              child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: Container(
-                    child: BottomBar(),
-                ),
-                ),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Center(
+              child: Text('Group Page'),
             ),
-       ],
-      )
+          ],
+        ),
+      ),
     );
-  
-  
   }
 }
