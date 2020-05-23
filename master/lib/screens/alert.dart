@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './BottomBar.dart';
 
 class Alert extends StatefulWidget {
   @override
@@ -9,30 +8,18 @@ class Alert extends StatefulWidget {
 class _AlertState extends State<Alert> {
   @override
   Widget build(BuildContext context) {
-        return Container(
-      alignment: Alignment.center,
-      color: Colors.white,
-       child: Column(
-         children: <Widget>[
-           Text("This is alerts Screens",
-           style: TextStyle(
-          decoration: TextDecoration.none
-         )
-        ),
-
-
-          Expanded(
-              child: Align(
-                  alignment: FractionalOffset.bottomCenter,
-                  child: Container(
-                    child: BottomBar(),
-                ),
-                ),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Center(
+              child: Text('Alert Page'),
             ),
-       ],
-      )
+          ],
+        ),
+      ),
     );
-  
-  
   }
 }
