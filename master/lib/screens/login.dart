@@ -260,8 +260,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(20),
+      body: SingleChildScrollView(
+        child: Container(
+            padding: EdgeInsets.all(20),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [Colors.redAccent,Colors.pink],begin: Alignment.topLeft,end: Alignment.bottomRight),
@@ -275,10 +276,9 @@ class _LoginPageState extends State<LoginPage> {
           _displayForm(context),
         ],
       )
-
+        ),
       ),
         
       );
   }
 }
-
