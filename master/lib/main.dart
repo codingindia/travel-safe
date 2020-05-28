@@ -8,6 +8,7 @@ import 'package:share/share.dart';
 import 'package:travelsafe/screens/register.dart';
 import 'package:travelsafe/screens/login.dart';
 import 'package:travelsafe/screens/introPage.dart';
+import 'package:travelsafe/screens/aboutUs.dart';
 
 
 void main() {
@@ -115,6 +116,20 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context)=>LoginPage()
+                    )
+                  );
+                }
+            ),
+            RaisedButton(
+                child: Text("About Us"),
+                color: Colors.blue,
+                textColor: Colors.white,
+                padding: EdgeInsets.all(8.0),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=>AboutUs()
                     )
                   );
                 }

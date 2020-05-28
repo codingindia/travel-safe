@@ -20,12 +20,15 @@ dependencies:
   gradient_app_bar:
   flutter:
     sdk: flutter
+  url_launcher: ^5.4.10
+  circular_profile_avatar: ^1.0.6
+  provider: ^4.1.2
   google_maps_flutter: ^0.5.24+1
   location_permissions: ^2.0.4+1
   location: ^2.5.3
   geolocator: ^5.3.0
   share: ^0.6.3+6
-  cloud_firestore: ^0.13.4+2
+  cloud_firestore: ^0.13.5
   splashscreen: ^1.2.0
   speech_bubble: ^0.0.6
   alphabet_list_scroll_view: ^1.0.6
