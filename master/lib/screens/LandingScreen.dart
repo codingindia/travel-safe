@@ -7,9 +7,9 @@ void main() => runApp(LandingScreen());
 class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    AssetImage share = AssetImage('assets/images/sharelogo.png');
+    AssetImage share = AssetImage('assets/images/updatedsharelogo.png');
     Image shareImage = Image(image: share);
-    AssetImage alert = AssetImage('assets/images/alertlogo.png');
+    AssetImage alert = AssetImage('assets/images/updatedalertlogo.png');
     Image alertImage = Image(image: alert);
     return Scaffold(
       body: SafeArea(
@@ -27,7 +27,7 @@ class LandingScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Share()));
                   },
                   child: Image(
-                    image: AssetImage('assets/images/sharelogo.png'),
+                    image: AssetImage('assets/images/updatedsharelogo.png'),
                   ),
                 ),
               ),
@@ -42,7 +42,7 @@ class LandingScreen extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => Alert()));
                   },
                   child: Image(
-                    image: AssetImage('assets/images/alertlogo.png'),
+                    image: AssetImage('assets/images/updatedalertlogo.png'),
                   ),
                 ),
               ),
