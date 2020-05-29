@@ -60,7 +60,7 @@ class _BottomBarState extends State<BottomBar> {
             index: pageIndex,
             key: _bottomNavigationKey,
             backgroundColor: Colors.white,
-            color: Colors.grey.shade800,
+            color: Colors.blue.shade400,
             items: <Widget>[
               Icon(
                 Icons.location_on,
@@ -108,6 +108,7 @@ class _BottomBarState extends State<BottomBar> {
       },
     };
   }
+
 
   Widget _buildOffstageNavigator(int index) {
     var routeBuilders = _routeBuilders(context, index);
