@@ -60,6 +60,8 @@ flutter:
     - assets/images/google.jpg
     - assets/images/sharelogo.png
     - assets/images/alertlogo.png
+    - assets/images/updatedsharelogo.png
+    - assets/images/updatedalertlogo.png
     - assets/images/home.png
     - assets/images/googleicon.png
     - assets/images/location.png
