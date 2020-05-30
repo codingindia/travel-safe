@@ -58,23 +58,24 @@ class _BottomBarState extends State<BottomBar> {
       child: Scaffold(
           bottomNavigationBar: CurvedNavigationBar(
             index: pageIndex,
+            height: 55,
             key: _bottomNavigationKey,
             backgroundColor: Colors.white,
             color: Colors.blue.shade400,
             items: <Widget>[
               Icon(
                 Icons.location_on,
-                size: 25.0,
+                size: 30.0,
                 color: Colors.white,
               ),
               Icon(
                 Icons.home,
-                size: 25.0,
+                size: 30.0,
                 color: Colors.white,
               ),
               Icon(
                 Icons.notifications_active,
-                size: 25.0,
+                size: 30.0,
                 color: Colors.white,
               ),
             ],
