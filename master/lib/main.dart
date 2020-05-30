@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:travelsafe/panicButton.dart';
+import 'package:travelsafe/screens/createGroup.dart';
 import 'package:travelsafe/screens/shared_location.dart';
 import 'package:travelsafe/screens/maps.dart';
 import 'package:geolocator/geolocator.dart';
@@ -16,6 +17,16 @@ void main() {
     home: new MyIntroPage(),
   ));
 }
+
+class MyPopupItem{
+    String title;
+    MyPopupItem({this.title});
+}
+
+
+List<MyPopupItem> choices = <MyPopupItem>[
+  MyPopupItem(title: "Create a group"),
+];
 
 
 class MyApp extends StatefulWidget {
@@ -56,7 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
   final Geolocator geolocator = Geolocator()
     ..forceAndroidLocationManager;
   Position _currentPosition;
+  MyPopupItem selected_item = choices[0];
 
+  void _select(MyPopupItem item){
+      setState(() {
+        selected_item = item;
+      });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +90,32 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>SharedLocation()));
           },
         ),
+        actions: <Widget>[
+          PopupMenuButton(
+            elevation: 3.2,
+            initialValue: choices[0],
+            onCanceled: (){
+              print("On cancelled clicked");
+            },
+      
+            onSelected: _select,
+            itemBuilder: (BuildContext context){
+              return choices.map(
+                (MyPopupItem choice){
+                  return PopupMenuItem(
+                    value: choice,
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => CreateGroup()));
+                      },
+                      child: Text(choice.title),
+                    )
+                  );
+                }
+              ).toList();
+            }
+          )
+        ],
       ),
       body: new Center(
         child: Column(
@@ -176,3 +219,20 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 }
+
+class SelectedOption extends StatelessWidget {
+  
+  MyPopupItem choice;
+  SelectedOption({Key key,this.choice}):super(key:key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+        
+        child: Text(choice.title),
+      )
+    );
+  }
+}
+
