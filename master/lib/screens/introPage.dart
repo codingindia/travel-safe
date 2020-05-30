@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travelsafe/screens/register.dart';
 import 'package:travelsafe/screens/login.dart';
+import 'package:travelsafe/screens/register.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:travelsafe/screens/aboutUs.dart';
 
 
 var color1 = Color(0xfff14856);
@@ -193,11 +194,14 @@ Future navigateToRegisterPage(context) async {
       context, MaterialPageRoute(builder: (context) => RegisterPage()));
 }
 
+// Future navigateToLoginPage(context) async {
+//   Navigator.pushReplacement(
+//       context, MaterialPageRoute(builder: (context) => AboutUs()));
+// }
 Future navigateToLoginPage(context) async {
   Navigator.pushReplacement(
       context, MaterialPageRoute(builder: (context) => LoginPage()));
 }
-
 class CarouselComponent extends StatelessWidget {
   final col1, col2, imgUrl, ttl, txt;
 
@@ -302,4 +306,3 @@ class Indicator extends StatelessWidget {
     );
   }
 }
-
