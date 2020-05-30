@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelsafe/screens/createGroup.dart';
 import 'package:travelsafe/screens/login.dart';
 import 'package:travelsafe/screens/register.dart';
 // import 'package:travelsafe/screens/login.dart';
@@ -197,7 +198,7 @@ Future navigateToRegisterPage(context) async {
 
 Future navigateToLoginPage(context) async {
   Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => AboutUs()));
+      context, MaterialPageRoute(builder: (context) => CreateGroup()));
 }
 
 class CarouselComponent extends StatelessWidget {
