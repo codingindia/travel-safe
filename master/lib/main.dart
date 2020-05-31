@@ -1,196 +1,64 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter_chat_ui/widgets/category_selector.dart';
+import 'package:flutter_chat_ui/widgets/favorite_contacts.dart';
+import 'package:flutter_chat_ui/widgets/recent_chats.dart';
 
-import 'groupdetails.dart';
-import 'groupstatus.dart';
-import 'homepage.dart';
-import 'loadingindicator.dart';
-import 'signinpage.dart';
-import 'signuppage.dart';
-
-var popflag = 0;
-List<UserData> users = new List<UserData>();
-logindetails logindet = new logindetails();
-groupDetails grpd = new groupDetails();
-
-final ThemeData kIOSTheme = new ThemeData(
-  primarySwatch: Colors.blueGrey,
-  accentColor: Colors.blueGrey,
-);
-
-final ThemeData kDefaultTheme = new ThemeData(
-  primarySwatch: Colors.blueGrey,
-  accentColor: Colors.blueGrey,
-);
-
-void main() {
-
-  runApp(
-    new MaterialApp(
-        title: "Travel Safe",
-        home: new SignInForm(),
-        theme: defaultTargetPlatform == TargetPlatform.iOS
-            ? kIOSTheme
-            : kDefaultTheme,
-        // ignore: missing_return
-        onGenerateRoute: (RouteSettings settings) {
-          // ignore: missing_return
-          switch (settings.name) {
-            case '/a':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new SignupLayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute(
-                      builder: (_) => new SignupLayout(),
-                      settings: settings,
-                    );
-
-            case '/b':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new Homepagelayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute(
-                      builder: (_) => new Homepagelayout(),
-                      settings: settings,
-                    );
-            case '/c':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new addGroup(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new addGroup(),
-                      settings: settings,
-                    );
-            case '/d':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new groupstatuslayout(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new groupstatuslayout(),
-                      settings: settings,
-                    );
-            case '/g':
-              return defaultTargetPlatform == TargetPlatform.iOS
-                  ? new CupertinoPageRoute(
-                      builder: (_) => new MapSample(),
-                      settings: settings,
-                    )
-                  : new MyCustomRoute1(
-                      builder: (_) => new MapSample(),
-                      settings: settings,
-                    );
-          }
-          assert(false);
-        }),
-  );
-}
-
-class MyCustomRoute<T> extends MaterialPageRoute<T> {
-  MyCustomRoute({WidgetBuilder builder, RouteSettings settings})
-      : super(builder: builder, settings: settings);
-
+class HomeScreen extends StatefulWidget {
   @override
-  Widget buildTransitions(BuildContext context, Animation<double> animation,
-      Animation<double> secondaryAnimation, Widget child) {
-    if (settings.isInitialRoute) return child;
-    return new FadeTransition(opacity: animation, child: child);
-  }
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class MyCustomRoute1<T> extends MaterialPageRoute<T> {
-  MyCustomRoute1({WidgetBuilder builder, RouteSettings settings})
-      : super(builder: builder, settings: settings);
-
+class _HomeScreenState extends State<HomeScreen> {
   @override
-  Widget TransitionBuilder(BuildContext context, Animation<Offset> animation,
-      Animation<double> secondaryAnimation, Widget child) {
-    if (settings.isInitialRoute) return child;
-    return new SlideTransition(position: animation, child: child);
-  }
-}
-
-class UserData {
-  UserData(
-      {this.EmailId,
-      this.password,
-      this.name,
-      this.locationShare,
-      this.groupsIamin,
-      this.location});
-  String EmailId;
-  String password;
-  String name;
-  bool locationShare;
-  Map<String, double> location = null;
-  List<String> groupsIamin = [];
-
-  UserData.fromJson(Map value) {
-    EmailId = value["emailid"];
-    name = value["name"];
-    locationShare = value["locationShare"];
-    groupsIamin = value["groupsIamin"];
-  }
-  Map toJson() {
-    return {
-      "name": name,
-      "locationShare": locationShare,
-      "groupsIamin": groupsIamin,
-      "emailid": EmailId,
-      "location": location
-    };
-  }
-}
-
-class logindetails {
-  logindetails({this.EmailId, this.password});
-  String EmailId = '';
-  String password = '';
-  //String name = '';
-}
-
-class groupDetails {
-  groupDetails({this.groupname, this.groupmembers});
-  String groupname = "";
-  List<UserData> groupmembers = [];
-
-  groupDetails.fromJson(Map value) {
-    groupname = value["groupname"];
-//    print("value of members:${value["members"]}");
-    groupmembers = value["members"];
-  }
-  Map toJson() {
-    return {"groupname": groupname, "members": groupmembers};
-  }
-}
-
-class currentLoc {
-  String EmailId;
-  Map<String, double> currentLocation;
-  currentLoc({this.EmailId, this.currentLocation});
-
-  currentLoc.fromJson(Map value) {
-    EmailId = value["emailid"];
-//    print("value of members:${value["members"]}");
-    currentLocation = value["location"];
-  }
-}
-
-class locationclass {
-  double latitude;
-  double longitude;
-
-  locationclass({this.latitude, this.longitude});
-
-  Map toJson() {
-    return {"latitude": latitude, "longitude": longitude};
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          iconSize: 30.0,
+          color: Colors.white,
+          onPressed: () {},
+        ),
+        title: Text(
+          'Chats',
+          style: TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        elevation: 0.0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            iconSize: 30.0,
+            color: Colors.white,
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: Column(
+        children: <Widget>[
+          CategorySelector(),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30.0),
+                  topRight: Radius.circular(30.0),
+                ),
+              ),
+              child: Column(
+                children: <Widget>[
+                  FavoriteContacts(),
+                  RecentChats(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
