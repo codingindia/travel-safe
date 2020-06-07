@@ -1,6 +1,6 @@
 # Travel Safe
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
 **Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
@@ -159,6 +159,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.xpertup.com"><img src="https://avatars0.githubusercontent.com/u/18233626?v=4" width="100px;" alt=""/><br /><sub><b>Tanmay Rauth</b></sub></a><br /><a href="#ideas-tanmayrauth" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-tanmayrauth" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/rukmini-meda-28042916a/"><img src="https://avatars2.githubusercontent.com/u/44504940?v=4" width="100px;" alt=""/><br /><sub><b>Rukmini Meda</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=Rukmini-Meda" title="Code">💻</a></td>
     <td align="center"><a href="https://sourcerer.io/himanshusharma89"><img src="https://avatars0.githubusercontent.com/u/44980497?v=4" width="100px;" alt=""/><br /><sub><b>HIMANSHU SHARMA</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=himanshusharma89" title="Code">💻</a></td>
+    <td align="center"><a href="https://sanxy.github.io/"><img src="https://avatars3.githubusercontent.com/u/15203737?v=4" width="100px;" alt=""/><br /><sub><b>Yusuf Adefolahan</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=sanxy" title="Code">💻</a></td>
   </tr>
 </table>
 
