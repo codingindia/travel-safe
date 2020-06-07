@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "ankitshaw",
+      "name": "Ankit Shaw",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25771394?v=4",
+      "profile": "https://github.com/ankitshaw",
+      "contributions": [
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "travel-safe",
+  "projectOwner": "codingindia",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
