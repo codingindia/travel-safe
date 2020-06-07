@@ -1,6 +1,6 @@
 # Travel Safe
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
 **Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
@@ -165,6 +165,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/991rajat"><img src="https://avatars0.githubusercontent.com/u/38184186?v=4" width="100px;" alt=""/><br /><sub><b>Rajat Kumar</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=991rajat" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/HarshMehta2468"><img src="https://avatars1.githubusercontent.com/u/56103228?v=4" width="100px;" alt=""/><br /><sub><b>Harsh Mehta</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=HarshMehta2468" title="Code">💻</a></td>
   </tr>
 </table>
 
