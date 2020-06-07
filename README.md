@@ -1,6 +1,6 @@
 # Travel Safe
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
 **Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
@@ -156,6 +156,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/ankitshaw"><img src="https://avatars2.githubusercontent.com/u/25771394?v=4" width="100px;" alt=""/><br /><sub><b>Ankit Shaw</b></sub></a><br /><a href="#ideas-ankitshaw" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-ankitshaw" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://www.xpertup.com"><img src="https://avatars0.githubusercontent.com/u/18233626?v=4" width="100px;" alt=""/><br /><sub><b>Tanmay Rauth</b></sub></a><br /><a href="#ideas-tanmayrauth" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-tanmayrauth" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
