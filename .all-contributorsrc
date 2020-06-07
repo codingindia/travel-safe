@@ -24,6 +24,15 @@
         "ideas",
         "maintenance"
       ]
+    },
+    {
+      "login": "Rukmini-Meda",
+      "name": "Rukmini Meda",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/44504940?v=4",
+      "profile": "https://www.linkedin.com/in/rukmini-meda-28042916a/",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
