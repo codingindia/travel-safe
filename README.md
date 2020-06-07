@@ -6,7 +6,7 @@ If you think that your notable tech skills can help women of our country travel 
 <p align="center">
 <img src="https://github.com/codingindia/travel-safe/blob/development/.github/Travel_Safe.png" width="300" height="300"></br></p>
 
-# [Join our Slack Channel](https://join.slack.com/t/coding-india/shared_invite/zt-e4aqrqk4-jVpEmDrnT~q_EwTJ_SRNpw)
+# [Join our Slack Channel](https://join.slack.com/t/codingindiaorg/shared_invite/zt-ex48v3mq-nzfhMVbyPVflIkh2HC7POw)
 
 
 ## Getting Started
