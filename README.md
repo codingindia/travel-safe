@@ -1,6 +1,6 @@
 # Travel Safe
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 Being Concerned with the increasing brutality and insecurities faced by women during their travel, Despite of many Safety apps, none of them properly solves this problem.</br>
 **Travel Safe**- A Flutter Application will help in preventing such instances and will promote safe and secure travel.</br>
@@ -171,6 +171,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/aswin-gopinathan-69556716a/"><img src="https://avatars1.githubusercontent.com/u/40236624?v=4" width="100px;" alt=""/><br /><sub><b>Aswin Gopinathan</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/commits?author=infiniteoverflow" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/pravinyo"><img src="https://avatars0.githubusercontent.com/u/12976227?v=4" width="100px;" alt=""/><br /><sub><b>Pravin Tripathi</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/pulls?q=is%3Apr+reviewed-by%3Apravinyo" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/TahaAli07"><img src="https://avatars3.githubusercontent.com/u/35555619?v=4" width="100px;" alt=""/><br /><sub><b>Taha Ali</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/pulls?q=is%3Apr+reviewed-by%3ATahaAli07" title="Reviewed Pull Requests">👀</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/bharatmk257"><img src="https://avatars1.githubusercontent.com/u/37737418?v=4" width="100px;" alt=""/><br /><sub><b>Bharat Makwana</b></sub></a><br /><a href="https://github.com/codingindia/travel-safe/pulls?q=is%3Apr+reviewed-by%3Abharatmk257" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
