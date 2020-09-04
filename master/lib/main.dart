@@ -14,6 +14,7 @@ import 'package:travelsafe/screens/aboutUs.dart';
 void main() {
   runApp(new MaterialApp(
     home: new MyIntroPage(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
